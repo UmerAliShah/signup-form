@@ -455,9 +455,9 @@ export function FormikStepper({ children, ...props }) {
           </Box>
           <Container>
             {currentChild}
-            <div className="form-group w-100 d-flex justify-content-center align-items-center my-5">
+            {/* <div className="form-group w-100 d-flex justify-content-center align-items-center my-5">
               <ReCAPTCHA sitekey={process.env.REACT_APP_SITE_KEY} />
-            </div>
+            </div> */}
             <Grid
               container
               spacing={2}

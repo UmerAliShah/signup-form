@@ -101,7 +101,7 @@ export default function Signin() {
                   Need help Signing In?
                 </p>
               </div>
-              <div className="form-group w-100 d-flex justify-content-center align-items-center my-5">
+              {/* <div className="form-group w-100 d-flex justify-content-center align-items-center my-5">
                 <ReCAPTCHA
                   sitekey={process.env.REACT_APP_SITE_KEY}
                   onChange={(value) => {
@@ -113,7 +113,7 @@ export default function Signin() {
                   component="div"
                   className="error-message"
                 />
-              </div>
+              </div> */}
 
               <Button
                 type="submit"
