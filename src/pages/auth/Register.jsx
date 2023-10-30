@@ -203,8 +203,8 @@ export default function Register() {
                 variant="outlined"
                 margin="normal"
                 fullWidth
-                id={name}
-                name={name}
+                id="lastname"
+                name="lastname"
                 value={formattedValue}
                 placeholder="__/__/____"
                 onChange={handleInputChange}
