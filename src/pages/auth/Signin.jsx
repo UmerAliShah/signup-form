@@ -10,9 +10,10 @@ import {
   Button,
 } from "@mui/material";
 import ReCAPTCHA from "react-google-recaptcha";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Signin() {
+  const navigation = useNavigate();
   const loginSchema = Yup.object().shape({
     password: Yup.string()
       .min(8, "Password is too short, minimum 8 characters required")
@@ -21,12 +22,8 @@ export default function Signin() {
     email: Yup.string()
       .email("Invalid email format")
       .required("Email is required"),
-    recaptcha: Yup.string().required("reCAPTCHA verification is required"),
+    // recaptcha: Yup.string().required("reCAPTCHA verification is required"),
   });
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("work");
-  };
   return (
     <Container component="main" maxWidth="sm" className="my-5">
       <Typography
@@ -40,7 +37,10 @@ export default function Signin() {
         <Formik
           initialValues={{ email: "", password: "" }}
           validationSchema={loginSchema}
-          onSubmit={handleSubmit}
+          onSubmit={(values) => {
+            console.log("work");
+            navigation("/home");
+          }}
         >
           {({ isSubmitting, values }) => (
             <Form>
@@ -130,7 +130,7 @@ export default function Signin() {
                     backgroundColor: "#80001C",
                   },
                 }}
-                disabled={isSubmitting}
+                // disabled={isSubmitting}
               >
                 Submit
               </Button>
